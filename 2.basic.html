@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Web Development</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Introduction to Web Development</h1>
+        <nav>
+            <a href="1.index.html">Home</a> |
+            <a href="2.basic.html">Introduction to Web Development</a> |
+            <a href="3.html-intro.html">HTML Basics</a> |
+            <a href="4.list&tabels.html">Nested Lists & Tables</a> |
+            <a href="5.filepath.html">File Paths & Boilerplate</a> |
+            <a href="6.forms.html">HTML Forms</a> |
+            <a href="7.mediatag.html">HTML Media & Multipage Websites</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <h2>Web Development!🤯</h2>
+        <p><b>Do you know about web and how it developed? Are you shocked? No worry. After seeing this video lecture and the lecture note, you will be pro about it. So, let's get started! 🚀</b></p>
+        <h2>Video Lecture</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1pcikNlDB-4" allowfullscreen></iframe>
+        <br><br>
+        <h2>Lecture note:</h2>
+        <p><b>Below the lecture note of this video for quick revision:</b></p>
+
+        <nav>
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#principles">Core Principles</a></li>
+                <li><a href="#addressing">Addressing Systems</a></li>
+                <li><a href="#dns">DNS System</a></li>
+                <li><a href="#practical">Practical Knowledge</a></li>
+            </ul>
+        </nav>
+        
+        <section id="principles">
+            <h2>Core Principles of Internet Communication</h2>
+            
+            <article>
+                <h3>1. The Need to Share Information</h3>
+                <p>At its simplest, the internet solves a basic problem: getting information from one computer to another that isn't in the same room. While physically moving data (via USB drives, etc.) works, it doesn't scale. The solution is establishing direct electronic connections between devices.</p>
+            </article>
+
+            <article>
+                <h3>2. Solving the Scale Problem</h3>
+                <p>Connecting every computer directly to every other computer is impractical. The solution is creating local networks with a central device (a switch) that manages communication between devices on the same network.</p>
+            </article>
+
+            <article>
+                <h3>3. Connecting Networks Together</h3>
+                <p>The internet is essentially a "network of networks." Special devices called routers connect local networks to each other, creating the global network we know as the internet.</p>
+            </article>
+
+            <article>
+                <h3>4. Addressing and Finding Devices</h3>
+                <p>With millions of connected devices, we need a universal addressing system. This is where IP addresses come in - unique identifiers for every device on the internet.</p>
+            </article>
+
+            <article>
+                <h3>5. Ensuring Reliability</h3>
+                <p>Large files are broken into small packets that travel independently across the network. Protocols like TCP/IP ensure these packets arrive correctly and can be reassembled at their destination.</p>
+            </article>
+        </section>
+
+        <section id="addressing">
+            <h2>Internet Addressing Systems</h2>
+            
+            <article>
+                <h3>IP Addresses: The Internet's Postal System</h3>
+                
+                <h4>IPv4 Addresses</h4>
+                <ul>
+                    <li>Format: 32-bit number represented as four decimal numbers (0-255) separated by periods</li>
+                    <li>Example: <code>172.217.16.142</code> (one of Google's addresses)</li>
+                    <li>Limitation: Only about 4.3 billion possible addresses</li>
+                </ul>
+                
+                <h4>IPv6 Addresses</h4>
+                <ul>
+                    <li>Format: 128-bit address using hexadecimal notation</li>
+                    <li>Example: <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></li>
+                    <li>Advantage: Vastly more addresses (340 undecillion)</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Public vs. Private IP Addresses</h3>
+                
+                <h4>Public IP Addresses</h4>
+                <ul>
+                    <li>Your unique global address on the internet</li>
+                    <li>Assigned by your Internet Service Provider (ISP)</li>
+                    <li>Required for servers and services accessible from anywhere</li>
+                </ul>
+                
+                <h4>Private IP Addresses</h4>
+                <ul>
+                    <li>Local addresses used within private networks (home, office)</li>
+                    <li>Common ranges: <code>192.168.x.x</code>, <code>10.x.x.x</code>, <code>172.16.x.x - 172.31.x.x</code></li>
+                    <li>Allow local device communication without using public IP addresses</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>MAC Addresses: Hardware Identification</h3>
+                <ul>
+                    <li>Unique, permanent serial numbers burned into network hardware</li>
+                    <li>Format: 48-bit number represented as 12 hexadecimal digits</li>
+                    <li>Example: <code>3C:22:FB:A3:B4:C5</code></li>
+                    <li>Used for local network communication</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Port Numbers: Application Addressing</h3>
+                <p>Port numbers identify specific applications or services on a device:</p>
+                
+                <h4>Well-Known Ports (0-1023)</h4>
+                <ul>
+                    <li>Reserved for fundamental internet services</li>
+                    <li>Examples: HTTP (80), HTTPS (443), SSH (22), SMTP (25)</li>
+                </ul>
+                
+                <h4>Registered Ports (1024-49151)</h4>
+                <ul>
+                    <li>Used by specific applications</li>
+                    <li>Developer examples: React/Node.js (3000), MongoDB (27017)</li>
+                </ul>
+                
+                <h4>Dynamic Ports (49152-65535)</h4>
+                <ul>
+                    <li>Temporary ports for client-side connections</li>
+                    <li>Not used for server applications</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="dns">
+            <h2>DNS: The Internet's Phonebook</h2>
+            <p>The Domain Name System (DNS) translates human-friendly domain names (like google.com) into computer-friendly IP addresses.</p>
+            
+            <article>
+                <h3>How DNS Works:</h3>
+                <ol>
+                    <li><strong>Local Cache Check</strong>: Your device checks if it already knows the IP address</li>
+                    <li><strong>Recursive Resolver</strong>: Your request is sent to a DNS resolver (usually provided by your ISP)</li>
+                    <li><strong>Hierarchical Search</strong>: The resolver queries root servers, TLD servers, and authoritative name servers</li>
+                    <li><strong>Response</strong>: The IP address is returned and cached for future requests</li>
+                </ol>
+            </article>
+        </section>
+
+        <section id="practical">
+            <h2>Practical Internet Knowledge for Developers</h2>
+            
+            <article>
+                <h3>Finding Your Network Information</h3>
+                
+                <h4>On Windows:</h4>
+                <ol>
+                    <li>Open Command Prompt</li>
+                    <li>Type <code>ipconfig /all</code> to see IP and MAC addresses</li>
+                    <li>Type <code>getmac /v</code> for just MAC addresses</li>
+                </ol>
+                
+                <h4>On macOS:</h4>
+                <ol>
+                    <li>Open Terminal</li>
+                    <li>Type <code>ifconfig</code> to see network information</li>
+                </ol>
+            </article>
+        </section>
+
+        <section>
+            <h2>Summary</h2>
+            <p>The internet isn't magic - it's a series of logical solutions to fundamental problems of communication and scale. Understanding these principles - from basic networking concepts to addressing systems like IP, MAC, and ports - provides the foundation for web development. This knowledge helps developers build better applications, troubleshoot problems more effectively, and understand the environment in which their code operates.</p>
+            <p>Whether you're building a simple website or a complex web application, this fundamental understanding of how the internet works will serve as valuable context for your development work.</p>
+        </section>
+        <br><br>
+        <p><b>For web development first you should learn about HTML. So, what's HTML and how it works.To learn HTML, <a href="3.html-intro.html">let's go</a>!🚀</b></p>
+        
+    </main>
+    <hr>
+    <footer align="center">
+        <p>Copyright &copy; 2025 by Tanmoy Chowdhury | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

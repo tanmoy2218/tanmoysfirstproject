@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Paths & Boilerplate</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Learn About File Paths & Boilerplate</h1>
+        <nav>
+            <a href="1.index.html">Home</a> |
+            <a href="2.basic.html">Introduction to Web Development</a> |
+            <a href="3.html-intro.html">HTML Basics</a> |
+            <a href="4.list&tabels.html">Nested Lists & Tables</a> |
+            <a href="5.filepath.html">File Paths & Boilerplate</a> |
+            <a href="6.forms.html">HTML Forms</a> |
+            <a href="7.mediatag.html">HTML Media & Multipage Websites</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <h3>What is File Path System, how it works and what is Boilerplate? Learn in details with example!🚀</h3>
+        <h2>Video Lecture</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/k78lNSAB8VY" allowfullscreen></iframe>
+        <h2>Lecture note:</h2>
+        <p><b>Below the lecture note of this video for quick revision:</b></p>
+        <nav>
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#file-paths">File Path System</a></li>
+                <li><a href="#boilerplate">HTML Boilerplate</a></li>
+                <li><a href="#multipage">Multipage Websites</a></li>
+                <li><a href="#semantic">Semantic HTML</a></li>
+            </ul>
+        </nav>
+        <section id="file-paths">
+            <h2>File Path System</h2>
+            
+            <article>
+                <h3>The Fundamental Truth</h3>
+                <p>A website is not one single file. It's a collection of different files (HTML, CSS, JavaScript, images, videos, fonts) that all need to work together. These files are organized into folders, just like documents on your computer.</p>
+            </article>
+            
+            <article>
+                <h3>The Core Problem</h3>
+                <p>If your index.html file needs to display an image named logo.png, how does the HTML file tell the browser where to find logo.png?</p>
+                <p>The browser needs an exact, unambiguous address to locate the file. A file path is that address.</p>
+            </article>
+            
+            <article>
+                <h3>Relative File Paths</h3>
+                <p>A relative file path gives directions to a file starting from the location of the file you are currently in. You will use this 99% of the time for linking your own files together (images, CSS, other HTML pages).</p>
+                
+                <h4>Example Folder Structure:</h4>
+                <pre><code>my-website/
+├── index.html
+├── about.html
+│
+├── images/
+│   ├── logo.png
+│   └── hero.jpg
+│
+└── pages/
+    ├── contact.html
+    └── terms.html</code></pre>
+                
+                <h4>Scenario 1: Linking to a file in the SAME folder</h4>
+                <p>You are in index.html and want to link to about.html:</p>
+                <pre><code>&lt;a href="about.html"&gt;About Us&lt;/a&gt;</code></pre>
+                
+                <h4>Scenario 2: Linking to a file in a SUB-FOLDER (Going Down)</h4>
+                <p>You are in index.html and want to display logo.png:</p>
+                <pre><code>&lt;img src="images/logo.png" alt="My Website Logo"&gt;</code></pre>
+                
+                <h4>Scenario 3: Linking to a file in a PARENT FOLDER (Going Up)</h4>
+                <p>You are in contact.html (inside pages/) and want to display logo.png (inside images/):</p>
+                <pre><code>&lt;img src="../images/logo.png" alt="My Website Logo"&gt;</code></pre>
+                <p>The <code>../</code> means "go up one level" out of the pages folder.</p>
+            </article>
+            
+            <article>
+                <h3>Absolute File Paths</h3>
+                <p>An absolute file path gives the full, complete URL to a resource on the web. It starts with http:// or https://.</p>
+                <p>Use absolute paths when linking to resources NOT on your own website:</p>
+                <pre><code>&lt;!-- Linking to an external website --&gt;
+&lt;a href="https://www.google.com"&gt;Search on Google&lt;/a&gt;
+
+&lt;!-- Using an image hosted on another server --&gt;
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Html5_logo_and_wordmark.svg" alt="HTML5 Logo"&gt;</code></pre>
+                
+                <h4>Why not use absolute paths for your own files?</h4>
+                <p>A beginner might be tempted to copy the full path from their computer:</p>
+                <pre><code>src="C:/Users/Arjun/Desktop/my-website/images/logo.png"</code></pre>
+                <p>This is a major mistake. This address only works on your computer. The moment you upload your website to a real web server, that path becomes meaningless and the image will be broken.</p>
+            </article>
+            
+            <article>
+                <h3>Browser Security: The Sandbox</h3>
+                <p>Think of a web browser as a secure prison for the code it runs. This prison is called a "sandbox."</p>
+                <p>The primary rule is: Code running inside the sandbox is NOT allowed to freely access the host computer's file system.</p>
+                <p>This prevents malicious websites from reading your private files, which would be a catastrophic security disaster.</p>
+            </article>
+            
+            <article>
+                <h3>Summary / Rules of Thumb</h3>
+                <p><strong>For Your Own Files (Internal Links):</strong> ALWAYS use Relative Paths</p>
+                <ul>
+                    <li><code>filename.html</code> (Same folder)</li>
+                    <li><code>folder/filename.html</code> (Go down)</li>
+                    <li><code>../filename.html</code> (Go up)</li>
+                </ul>
+                
+                <p><strong>For Other Websites' Files (External Links):</strong> ALWAYS use Absolute Paths</p>
+                <ul>
+                    <li><code>https://www.example.com/page.html</code></li>
+                </ul>
+            </article>
+            
+            <article>
+                <h3>Absolute Paths in Different Operating Systems</h3>
+                
+                <h4>Windows</h4>
+                <p>Absolute paths in Windows start with a drive letter followed by a colon and backslash:</p>
+                <pre><code>C:\Users\JohnDoe\Documents\report.docx</code></pre>
+                <p>Windows uses backslashes (\) to separate directories.</p>
+                
+                <h4>macOS and Linux</h4>
+                <p>Absolute paths in macOS/Linux start with a single forward slash:</p>
+                <pre><code>/Users/johndoe/Documents/report.docx</code></pre>
+                <p>macOS/Linux uses forward slashes (/) to separate directories.</p>
+            </article>
+        </section>
+
+        <section id="boilerplate">
+            <h2>HTML Boilerplate Code</h2>
+            
+            <article>
+                <h3>The Fundamental Truth</h3>
+                <p>A web browser needs specific, predictable instructions to do its job. It cannot guess your intentions.</p>
+            </article>
+            
+            <article>
+                <h3>The Core Problem</h3>
+                <p>We need a way to give the browser essential "setup information" before it starts rendering our visible content. This setup information needs to answer critical questions:</p>
+                <ul>
+                    <li>What version of HTML am I reading?</li>
+                    <li>What character encoding should I use?</li>
+                    <li>What should the title of the browser tab be?</li>
+                    <li>How should this page behave on a mobile device vs. a desktop?</li>
+                </ul>
+            </article>
+            
+            <article>
+                <h3>The Logical Solution - The Boilerplate</h3>
+                <p>The solution is to create a standard, universal starting template—a boilerplate. This is a block of code that you will start every single HTML file with.</p>
+                
+                <h4>Modern HTML5 Boilerplate:</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Anatomy of the HTML Boilerplate</h3>
+                
+                <h4>1. &lt;!DOCTYPE html&gt;</h4>
+                <p>This is the Document Type Declaration. It tells the browser: "Use the latest, standard-compliant mode for rendering this HTML document." It must always be the first thing in your file.</p>
+                
+                <h4>2. &lt;html lang="en"&gt;</h4>
+                <p>This is the root element that wraps your entire page. The lang="en" attribute declares that the primary language of the page content is English. This is very important for accessibility and SEO.</p>
+                
+                <h4>3. &lt;head&gt;</h4>
+                <p>The head section is the container for all the "behind-the-scenes" information that is for the browser, not for the user to see on the page.</p>
+                
+                <h4>4. &lt;meta charset="UTF-8"&gt;</h4>
+                <p>This meta tag explicitly tells the browser to use UTF-8, which is the universal standard character set for the web. This line is essential to prevent text-encoding issues.</p>
+                
+                <h4>5. &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</h4>
+                <p>This specific meta tag is the cornerstone of responsive design. It tells the browser to render the page in a way that is optimized for mobile screens.</p>
+                
+                <h4>6. &lt;title&gt;</h4>
+                <p>Sets the text that appears in the browser tab, in bookmark lists, and in search engine results. It's a critical piece of metadata for both usability and SEO.</p>
+                
+                <h4>7. &lt;body&gt;</h4>
+                <p>The body section is the container for everything the user will actually see on the page: your headings, paragraphs, images, links, etc.</p>
+            </article>
+            
+            <article>
+                <h3>Why Websites Work Without Boilerplate</h3>
+                <p>Browsers are built to be extremely forgiving. When you give it a file without a boilerplate, the browser tries to guess your intentions:</p>
+                <ul>
+                    <li>No &lt;!DOCTYPE html&gt;? The browser enters "Quirks Mode" which mimics old browser behavior</li>
+                    <li>No &lt;html&gt; or &lt;body&gt; tags? The browser implicitly generates them</li>
+                    <li>No &lt;meta charset="UTF-8"&gt;? The browser guesses the encoding</li>
+                    <li>No &lt;title&gt;? The browser uses the filename</li>
+                </ul>
+                
+                <h4>Why Use a Boilerplate if the Browser Fixes Everything?</h4>
+                <p>For a simple "Hello World" page, it might look the same. But the boilerplate is essential for professional, reliable, and future-proof websites:</p>
+                <ul>
+                    <li><strong>Unpredictable Rendering:</strong> Without &lt;!DOCTYPE html&gt;, browsers use Quirks Mode which can cause inconsistent rendering</li>
+                    <li><strong>Broken Characters:</strong> Without charset="UTF-8", special characters may not display correctly</li>
+                    <li><strong>Bad Mobile Experience:</strong> Without the viewport meta tag, websites are unusable on mobile</li>
+                    <li><strong>Poor SEO and Accessibility:</strong> Search engines and screen readers rely on boilerplate tags</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="multipage">
+            <h2>Multipage Websites</h2>
+            
+            <article>
+                <h3>The Fundamental Truth</h3>
+                <p>Complex information is almost never presented on a single, infinitely long page. We naturally break information into distinct, self-contained topics.</p>
+            </article>
+            
+            <article>
+                <h3>The Core Problem</h3>
+                <p>We need a way to create distinct topic pages and a way for users to navigate between them seamlessly.</p>
+            </article>
+            
+            <article>
+                <h3>The Logical Solution</h3>
+                <p>The solution involves two key components:</p>
+                <ol>
+                    <li><strong>A Consistent Structure:</strong> All pages on the site should share a common look and feel with the same header and footer</li>
+                    <li><strong>A Linking System:</strong> Use the &lt;a&gt; tag to create a navigation menu that appears on every page</li>
+                </ol>
+            </article>
+            
+            <article>
+                <h3>The &lt;div&gt; Element (The Generic Box)</h3>
+                <p>The &lt;div&gt; (short for "division") is a generic, meaningless container. Its only job is to be a box that you can put other elements into for grouping and styling.</p>
+                
+                <h4>Example:</h4>
+                <pre><code>&lt;div&gt;
+    &lt;img src="avatar.png"&gt;
+    &lt;h2&gt;Arjun Kumar&lt;/h2&gt;
+    &lt;p&gt;Loves to code and teach HTML.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Class and ID Attributes (The Labels for the Box)</h3>
+                <p>Once we have boxes (&lt;div&gt;s), we need a way to identify and find them.</p>
+                
+                <h4>ID Attribute</h4>
+                <p>A unique identifier for one specific element on the entire page. Perfect for major, one-of-a-kind layout sections.</p>
+                
+                <h4>Class Attribute</h4>
+                <p>A reusable classifier that can be applied to multiple elements to group them into a category.</p>
+                
+                <h4>Example:</h4>
+                <pre><code>&lt;!-- The one and only main header on the page --&gt;
+&lt;div id="main-header"&gt;...&lt;/div&gt;
+
+&lt;!-- A card that is special --&gt;
+&lt;div id="featured-profile" class="profile-card"&gt;...&lt;/div&gt;
+
+&lt;!-- A standard card --&gt;
+&lt;div class="profile-card"&gt;...&lt;/div&gt;
+
+&lt;!-- Another standard card --&gt;
+&lt;div class="profile-card"&gt;...&lt;/div&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>The &lt;span&gt; Element (The Inline Highlighter)</h3>
+                <p>The &lt;span&gt; is a generic inline container for phrasing content. It does not create a line break and is used to label and style a piece of content within a line of text.</p>
+                
+                <h4>Example:</h4>
+                <pre><code>&lt;p&gt;This is very &lt;span class="highlight"&gt;important&lt;/span&gt; information.&lt;/p&gt;</code></pre>
+            </article>
+        </section>
+
+        <section id="semantic">
+            <h2>Semantic HTML Elements</h2>
+            
+            <article>
+                <h3>Why Semantic HTML?</h3>
+                <p>While &lt;div&gt; and &lt;span&gt; are useful, HTML5 introduced semantic elements that give meaning to the structure of your web page.</p>
+            </article>
+            
+            <article>
+                <h3>Common Semantic Elements</h3>
+                
+                <h4>&lt;header&gt;</h4>
+                <p>Represents introductory content at the top of your page or a section. Typically contains your logo, site navigation, and main heading.</p>
+                
+                <h4>&lt;nav&gt;</h4>
+                <p>Represents a section of a page that contains navigation links.</p>
+                
+                <h4>&lt;main&gt;</h4>
+                <p>Represents the dominant content of the &lt;body&gt; of a document. There should be only one &lt;main&gt; element per page.</p>
+                
+                <h4>&lt;section&gt;</h4>
+                <p>Represents a standalone section of content.</p>
+                
+                <h4>&lt;article&gt;</h4>
+                <p>Represents a self-contained composition in a document, page, or site.</p>
+                
+                <h4>&lt;aside&gt;</h4>
+                <p>Represents a portion of a document whose content is only indirectly related to the document's main content.</p>
+                
+                <h4>&lt;footer&gt;</h4>
+                <p>Represents a footer for its nearest sectioning content or sectioning root element. Typically contains copyright info, contact details, and secondary links.</p>
+            </article>
+            
+            <article>
+                <h3>Example of Semantic Structure</h3>
+                <pre><code>&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Website Title&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Article Title&lt;/h2&gt;
+            &lt;p&gt;Article content...&lt;/p&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;Related Links&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Copyright &copy; 2025&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+            </article>
+            <h3>Output</h3>
+            <body>
+                <header>
+                    <h1>Website Title</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                
+                <main>
+                    <article>
+                        <h2>Article Title</h2>
+                        <p>Article content...</p>
+                    </article>
+                    
+                    <aside>
+                        <h3>Related Links</h3>
+                        <ul>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 2</a></li>
+                        </ul>
+                    </aside>
+                </main>
+                
+                <footer>
+                    <p>Copyright © 2025</p>
+                </footer>
+            </body>
+        </section>
+        <br><br>
+        <h3>Next lesson: HTML Forms From Beginner to Advance</a>.So, <a href="6.forms.html">let's go</a>!🚀</h3>
+    </main>
+    <hr>
+    <footer align="center">
+        <p>Copyright &copy; 2025 by Tanmoy Chowdhury | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

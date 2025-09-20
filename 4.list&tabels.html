@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Lists & Tables</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Learn Nested Lists & Tables</h1>
+        <nav>
+            <a href="1.index.html">Home</a> |
+            <a href="2.basic.html">Introduction to Web Development</a> |
+            <a href="3.html-intro.html">HTML Basics</a> |
+            <a href="4.list&tabels.html">Nested Lists & Tables</a> |
+            <a href="5.filepath.html">File Paths & Boilerplate</a> |
+            <a href="6.forms.html">HTML Forms</a> |
+            <a href="7.mediatag.html">HTML Media & Multipage Websites</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <h3>Master in NESTED LIST & TABLES.🎓 </h3>
+        <h2>Video Lecture</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/AJ4E1zf5tQs" allowfullscreen></iframe>
+        <h2>Lecture note:</h2>
+        <p><b>Below the lecture note of this video for quick revision:</b></p>
+        
+        <nav>
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#basics">Table Basics</a></li>
+                <li><a href="#semantic">Semantic Structure</a></li>
+                <li><a href="#merging">Merging Cells</a></li>
+            </ul>
+        </nav>
+
+        <section id="basics">
+            <h2>Table Basics: &lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</h2>
+            
+            <article>
+                <h3>The &lt;table&gt; Element</h3>
+                <p>The container for all table elements. Defines that content should be rendered as a table.</p>
+                <pre><code>&lt;table&gt;
+  &lt;!-- table content goes here --&gt;
+&lt;/table&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Table Rows: &lt;tr&gt;</h3>
+                <p>Defines a row within the table. Each &lt;tr&gt; contains either &lt;th&gt; or &lt;td&gt; elements.</p>
+                <pre><code>&lt;tr&gt;
+  &lt;td&gt;Cell 1&lt;/td&gt;
+  &lt;td&gt;Cell 2&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Table Headers: &lt;th&gt;</h3>
+                <p>Defines a header cell. Used for column or row headers. Screen readers use these to provide context.</p>
+                <pre><code>&lt;tr&gt;
+  &lt;th&gt;Product Name&lt;/th&gt;
+  &lt;th&gt;Price&lt;/th&gt;
+  &lt;th&gt;Stock&lt;/th&gt;
+&lt;/tr&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Table Data: &lt;td&gt;</h3>
+                <p>Defines a standard data cell within the table.</p>
+                <pre><code>&lt;tr&gt;
+  &lt;td&gt;Laptop&lt;/td&gt;
+  &lt;td&gt;$899.99&lt;/td&gt;
+  &lt;td&gt;15&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Basic Table Example</h3>
+                <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;Country&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John&lt;/td&gt;
+    &lt;td&gt;28&lt;/td&gt;
+    &lt;td&gt;USA&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Maria&lt;/td&gt;
+    &lt;td&gt;32&lt;/td&gt;
+    &lt;td&gt;Spain&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </article>
+        </section>
+
+        <section id="semantic">
+            <h2>Semantic Table Structure: &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</h2>
+            
+            <article>
+                <h3>Table Head: &lt;thead&gt;</h3>
+                <p>Contains header content (column headings). Defines the header section of a table.</p>
+                <pre><code>&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Product&lt;/th&gt;
+    &lt;th&gt;Price&lt;/th&gt;
+    &lt;th&gt;Quantity&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Table Body: &lt;tbody&gt;</h3>
+                <p>Contains the primary data of the table. There can be multiple &lt;tbody&gt; elements to group rows.</p>
+                <pre><code>&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Keyboard&lt;/td&gt;
+    &lt;td&gt;$49.99&lt;/td&gt;
+    &lt;td&gt;23&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Mouse&lt;/td&gt;
+    &lt;td&gt;$25.99&lt;/td&gt;
+    &lt;td&gt;37&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Table Foot: &lt;tfoot&gt;</h3>
+                <p>Contains footer content such as sums, totals, or summary information.</p>
+                <pre><code>&lt;tfoot&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Total&lt;/td&gt;
+    &lt;td&gt;$75.98&lt;/td&gt;
+    &lt;td&gt;60&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tfoot&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Complete Semantic Table Example</h3>
+                <pre><code>&lt;table&gt;
+  &lt;caption&gt;Monthly Sales Report&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Product&lt;/th&gt;
+      &lt;th&gt;January&lt;/th&gt;
+      &lt;th&gt;February&lt;/th&gt;
+      &lt;th&gt;March&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Widget A&lt;/td&gt;
+      &lt;td&gt;150&lt;/td&gt;
+      &lt;td&gt;210&lt;/td&gt;
+      &lt;td&gt;185&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Widget B&lt;/td&gt;
+      &lt;td&gt;90&lt;/td&gt;
+      &lt;td&gt;95&lt;/td&gt;
+      &lt;td&gt;110&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Total&lt;/td&gt;
+      &lt;td&gt;240&lt;/td&gt;
+      &lt;td&gt;305&lt;/td&gt;
+      &lt;td&gt;295&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+            </article>
+        </section>
+
+        <section id="merging">
+            <h2>Merging Cells: colspan and rowspan</h2>
+            
+            <article>
+                <h3>Column Span: colspan</h3>
+                <p>Merges cells horizontally. The value indicates how many columns the cell should span.</p>
+                <pre><code>&lt;tr&gt;
+  &lt;th colspan="2"&gt;Personal Information&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;First Name&lt;/td&gt;
+  &lt;td&gt;Last Name&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Row Span: rowspan</h3>
+                <p>Merges cells vertically. The value indicates how many rows the cell should span.</p>
+                <pre><code>&lt;tr&gt;
+  &lt;td rowspan="2"&gt;Category A&lt;/td&gt;
+  &lt;td&gt;Item 1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Item 2&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Complex Table with Merged Cells</h3>
+                <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th rowspan="2"&gt;Department&lt;/th&gt;
+    &lt;th colspan="2"&gt;Employees&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Full-time&lt;/th&gt;
+    &lt;th&gt;Part-time&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Marketing&lt;/td&gt;
+    &lt;td&gt;12&lt;/td&gt;
+    &lt;td&gt;5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Development&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;8&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </article>
+        </section>
+
+
+        <h3>Output</h3>
+        <table border="1">
+            <tr>
+                <th rowspan="2">Department</th>
+                <th colspan="2">Employees</th>
+            </tr>
+            <tr>
+                <th>Full-time</th>
+                <th>Part-time</th>
+            </tr>
+            <tr>
+                <td>Marketing</td>
+                <td>12</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Development</td>
+                <td>25</td>
+                <td>8</td>
+            </tr>
+        </table>
+        <br><br>
+        <h3>Next lesson: File Paths & Boilerplate</a>.So, <a href="5.filepath.html">let's go</a>!🚀</h3>
+    </main>
+    <hr>
+    <footer align="center">
+        <p>Copyright &copy; 2025 by Tanmoy Chowdhury | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

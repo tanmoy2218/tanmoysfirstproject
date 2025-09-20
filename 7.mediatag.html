@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Media & Multipage Websites</title>
+</head>
+<body>
+    <header align="center">
+        <h1>HTML Media & Multipage Websites</h1>
+        <nav>
+            <a href="1.index.html">Home</a> |
+            <a href="2.basic.html">Introduction to Web Development</a> |
+            <a href="3.html-intro.html">HTML Basics</a> |
+            <a href="4.list&tabels.html">Nested Lists & Tables</a> |
+            <a href="5.filepath.html">File Paths & Boilerplate</a> |
+            <a href="6.forms.html">HTML Forms</a> |
+            <a href="7.mediatag.html">HTML Media & Multipage Websites</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <h3>Here we learn how to add audio & video file, how to marge multiple website and how to deploy a website. So, let's start!🚀</h3>
+        <h2>Video Lecture</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NGYp1zCBthk" allowfullscreen></iframe>
+        <h2>Lecture note:</h2>
+        <p><b>Below the lecture note of this video for quick revision:</b></p>
+        <nav>
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#introduction">Introduction to HTML Media</a></li>
+            <li><a href="#video">Video Element</a></li>
+            <li><a href="#audio">Audio Element</a></li>
+            <li><a href="#advanced">Advanced Media Features</a></li>
+            <li><a href="#symbols">HTML Symbols & Entities</a></li>
+        </ul>
+        </nav>
+        <section id="introduction">
+            <h2>Introduction to HTML Media</h2>
+            
+            <article>
+                <h3>First Principle: The Web is More Than Text and Images</h3>
+                <p>The fundamental truth is that a webpage should be able to deliver any kind of content, not just static text and pictures. For years, this was a major problem. To play a video or audio file, browsers had to rely on third-party plugins like Adobe Flash, QuickTime, or Silverlight. This was inefficient, insecure, and inconsistent across different computers.</p>
+            </article>
+            
+            <article>
+                <h3>The Core Problem</h3>
+                <p>How can we embed video and audio into a webpage in a standardized, native, and plugin-free way? We need a universal system that works on every modern browser, from a desktop PC to a mobile phone, without requiring the user to install anything extra.</p>
+            </article>
+            
+            <article>
+                <h3>The Logical Solution</h3>
+                <p>The solution was to create dedicated HTML tags whose sole purpose is to embed and control media: the <strong>&lt;video&gt;</strong> and <strong>&lt;audio&gt;</strong> tags introduced in HTML5.</p>
+            </article>
+        </section>
+
+        <section id="video">
+            <h2>The Video Element</h2>
+            
+            <article>
+                <h3>Basic Video Implementation</h3>
+                <p>The most basic implementation uses the src attribute:</p>
+                <pre><code>&lt;video src="my-awesome-video.mp4"&gt;&lt;/video&gt;</code></pre>
+                <p>However, this only shows the first frame of the video as a static image without any controls.</p>
+            </article>
+            
+            <article>
+                <h3>The Controls Attribute</h3>
+                <p>The controls attribute is a boolean attribute that adds browser-native controls to the video player.</p>
+                <pre><code>&lt;video src="my-awesome-video.mp4" controls&gt;&lt;/video&gt;</code></pre>
+                <p>This creates a fully functional video player with play/pause, timeline, volume controls, and fullscreen option.</p>
+            </article>
+            
+            <article>
+                <h3>Video Attributes</h3>
+                <p>Several attributes control the behavior and appearance of video elements:</p>
+                
+                <h4>width and height</h4>
+                <p>Sets the dimensions of the player, just like with an &lt;img&gt; tag.</p>
+                <pre><code>&lt;video src="video.mp4" width="640" height="360" controls&gt;&lt;/video&gt;</code></pre>
+                
+                <h4>autoplay</h4>
+                <p>Makes the video start playing as soon as the page loads.</p>
+                <p><strong>Important:</strong> Modern browsers block autoplay with sound. To make autoplay work, you must also add the muted attribute.</p>
+                <pre><code>&lt;video src="video.mp4" autoplay muted controls&gt;&lt;/video&gt;</code></pre>
+                
+                <h4>loop</h4>
+                <p>Makes the video automatically restart from the beginning when it finishes.</p>
+                <pre><code>&lt;video src="video.mp4" loop controls&gt;&lt;/video&gt;</code></pre>
+                
+                <h4>poster</h4>
+                <p>Specifies an image to display before the video is played, like a YouTube thumbnail.</p>
+                <pre><code>&lt;video src="video.mp4" poster="images/video-thumbnail.jpg" controls&gt;&lt;/video&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Browser Compatibility & Multiple Sources</h3>
+                <p>Not all browsers support the same video formats. Chrome might prefer .webm, while Safari might only support .mp4.</p>
+                <p>The solution is to provide multiple formats using the &lt;source&gt; element inside the &lt;video&gt; tag.</p>
+                
+                <h4>Robust & Professional Method</h4>
+                <pre><code>&lt;video controls poster="images/thumbnail.jpg"&gt;
+  &lt;source src="videos/my-video.webm" type="video/webm"&gt;
+  &lt;source src="videos/my-video.mp4" type="video/mp4"&gt;
+  Sorry, your browser doesn't support embedded videos.
+&lt;/video&gt;</code></pre>
+                
+                <p>The browser will try each source in order and use the first format it supports. Common video formats include:</p>
+                <ul>
+                    <li><strong>.mp4 (H.264 codec):</strong> Most widely supported format</li>
+                    <li><strong>.webm (VP8/VP9 codec):</strong> Open-source format supported by Chrome and Firefox</li>
+                    <li><strong>.ogg (Theora codec):</strong> Older open-source alternative</li>
+                </ul>
+                
+                <h4>Simple & Direct Method</h4>
+                <pre><code>&lt;video src="movie.mp4" controls&gt;&lt;/video&gt;</code></pre>
+                <p>This method is simpler but risks incompatibility with browsers that don't support your chosen format.</p>
+            </article>
+        </section>
+
+        <section id="audio">
+            <h2>The Audio Element</h2>
+            
+            <article>
+                <h3>Basic Audio Implementation</h3>
+                <p>The &lt;audio&gt; tag works almost identically to the &lt;video&gt; tag, just without the visual component.</p>
+                <pre><code>&lt;audio src="audio/theme-song.mp3" controls&gt;&lt;/audio&gt;</code></pre>
+                <p>This creates an audio player with play/pause, timeline, and volume controls.</p>
+            </article>
+            
+            <article>
+                <h3>Audio Attributes</h3>
+                <p>The &lt;audio&gt; tag supports the same attributes as &lt;video&gt;:</p>
+                <pre><code>&lt;audio src="audio/theme-song.mp3" autoplay loop controls&gt;&lt;/audio&gt;</code></pre>
+            </article>
+            
+            <article>
+                <h3>Multiple Audio Sources</h3>
+                <p>Just like with video, you can provide multiple audio formats for better browser compatibility.</p>
+                <pre><code>&lt;audio controls&gt;
+  &lt;source src="audio/sound.ogg" type="audio/ogg"&gt;
+  &lt;source src="audio/sound.mp3" type="audio/mpeg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+            </article>
+        </section>
+
+        <section id="advanced">
+            <h2>Advanced Media Features</h2>
+            
+            <article>
+                <h3>Accessibility: The &lt;track&gt; Element</h3>
+                <p>The &lt;track&gt; element allows you to add timed text tracks, such as subtitles or captions, making your media accessible to more users.</p>
+                
+                <h4>Adding Subtitles and Captions</h4>
+                <pre><code>&lt;video controls&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  
+  &lt;!-- English Captions for the hearing impaired --&gt;
+  &lt;track src="captions_en.vtt" kind="captions" srclang="en" label="English"&gt;
+
+  &lt;!-- Spanish Subtitles for translation --&gt;
+  &lt;track src="subtitles_es.vtt" kind="subtitles" srclang="es" label="Español"&gt;
+&lt;/video&gt;</code></pre>
+                
+                <h4>Track Attributes</h4>
+                <ul>
+                    <li><strong>src:</strong> Path to the WebVTT (.vtt) file</li>
+                    <li><strong>kind:</strong> Type of track (captions, subtitles, descriptions)</li>
+                    <li><strong>srclang:</strong> Language of the track (e.g., "en" for English)</li>
+                    <li><strong>label:</strong> Name that appears in the player's captions menu</li>
+                </ul>
+                
+                <h4>Track Kinds</h4>
+                <ul>
+                    <li><strong>captions:</strong> Transcription of dialogue and important sounds for users who can't hear audio</li>
+                    <li><strong>subtitles:</strong> Translation of dialogue into another language</li>
+                    <li><strong>descriptions:</strong> Separate audio description for visually impaired users</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="symbols">
+            <h2>HTML Symbols & Entities</h2>
+            
+            <article>
+                <h3>HTML Entities</h3>
+                <p>HTML entities are used to display reserved characters and symbols that have special meaning in HTML.</p>
+                
+                <h4>The Copyright Symbol ©</h4>
+                <p>You can create the copyright symbol using either the entity name or entity number:</p>
+                
+                <h5>Using Entity Name (Recommended)</h5>
+                <pre><code>Copyright &copy; 2024 My Website</code></pre>
+                <p>Renders as: Copyright © 2024 My Website</p>
+                
+                <h5>Using Entity Number</h5>
+                <pre><code>Copyright &#169; 2024 My Website</code></pre>
+                <p>Renders as: Copyright © 2024 My Website</p>
+            </article>
+            
+            <article>
+                <h3>Common HTML Entities</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Description</th>
+                            <th>Entity Name</th>
+                            <th>Entity Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>©</td>
+                            <td>Copyright</td>
+                            <td>&amp;copy;</td>
+                            <td>&amp;#169;</td>
+                        </tr>
+                        <tr>
+                            <td>®</td>
+                            <td>Registered Trademark</td>
+                            <td>&amp;reg;</td>
+                            <td>&amp;#174;</td>
+                        </tr>
+                        <tr>
+                            <td>™</td>
+                            <td>Trademark</td>
+                            <td>&amp;trade;</td>
+                            <td>&amp;#8482;</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;</td>
+                            <td>Less-than (for showing code)</td>
+                            <td>&amp;lt;</td>
+                            <td>&amp;#60;</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;</td>
+                            <td>Greater-than (for showing code)</td>
+                            <td>&amp;gt;</td>
+                            <td>&amp;#62;</td>
+                        </tr>
+                        <tr>
+                            <td>&amp;</td>
+                            <td>Ampersand</td>
+                            <td>&amp;amp;</td>
+                            <td>&amp;#38;</td>
+                        </tr>
+                        <tr>
+                            <td>"</td>
+                            <td>Double Quote</td>
+                            <td>&amp;quot;</td>
+                            <td>&amp;#34;</td>
+                        </tr>
+                        <tr>
+                            <td>€</td>
+                            <td>Euro Sign</td>
+                            <td>&amp;euro;</td>
+                            <td>&amp;#8364;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h4>Why Entities for &lt; and &gt;?</h4>
+                <p>Because the browser would interpret &lt; and &gt; as the start or end of an HTML tag. If you want to literally display the text &lt;p&gt; on your page, you must write &amp;lt;p&amp;gt;.</p>
+                <pre><code>&amp;lt;p&amp;gt;This is a paragraph&amp;lt;/p&amp;gt;</code></pre>
+                <p>Renders as: &lt;p&gt;This is a paragraph&lt;/p&gt;</p>
+            </article>
+        </section>
+
+        <br><br>
+        <h3>This is the end of a Journey of HTML. Hope you understand all the topics and hope you can build a website by yourself by using Html. Keep forward. See you in an another journey! Stay with us.✨</h3>
+        <h2 align="center">THE END....</h2>
+    </main>
+    <hr>
+    <footer align="center">
+        <p>Copyright &copy; 2025 by Tanmoy Chowdhury | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

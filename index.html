@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <header align="center">
+        <h1>Register first to explore my website!</h1>
+    </header>
+    <br>
+    <center>
+        <h2>Registration Form</h2>
+        
+        <form>
+            <table>
+                <tr>
+                    <td><label for="firstName">First Name:</label></td>
+                    <td><input type="text" id="firstName" name="firstName" placeholder="e.g: Sumedh" required></td>
+                </tr>
+                <tr>
+                    <td><label for="lastName">Last Name:</label></td>
+                    <td><input type="text" id="lastName" name="lastName" placeholder="e.g: Chowdhury" required></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="mobile">Mobile:</label></td>
+                    <td><input type="tel" id="mobile" name="mobile" placeholder="0123456789" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email Address:</label></td>
+                    <td><input type="email" id="email" name="email" placeholder="user@example.com" required></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Date fo Birth:</label></td>
+                    <td><input type="date" id="dob" name="dob" required></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address:</label></td>
+                    <td><textarea id="address" name="address" rows="3" placeholder="Dhaka,Bangladesh"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="Department">Department:</label></td>
+                    <td>
+                        <select name="Department" id="Department">
+                            <option value="CSE">CSE</option>
+                            <option value="SWE">SWE</option>
+                            <option value="ICE">ICE</option>
+                            <option value="ITM">ITM</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Web Development">About Web Development:</label></td>
+                    <td><textarea id="Web Development" name="Web Development" rows="10" cols="30" placeholder="What do you know about web development and why you want to learn this?" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit"><a href="1.index.html">Register</button></a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+    
+</body>
+</html>

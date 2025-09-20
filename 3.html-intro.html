@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics</title>
+</head>
+<body>
+    <header align="center">
+        <h1>HTML Fundamentals: HyperText Markup Language</h1>
+        <nav>
+            <a href="1.index.html">Home</a> |
+            <a href="2.basic.html">Introduction to Web Development</a> |
+            <a href="3.html-intro.html">HTML Basics</a> |
+            <a href="4.list&tabels.html">Nested Lists & Tables</a> |
+            <a href="5.filepath.html">File Paths & Boilerplate</a> |
+            <a href="6.forms.html">HTML Forms</a> |
+            <a href="7.mediatag.html">HTML Media & Multipage Websites</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <h2>HTML!😵‍💫</h2>
+        <p><b>Are you shocked? No worry. By this lecture you will master about HTML. So, let's start!🚀</b></p>
+        <p><b>Here are the step by step lecture content, where you can master about HTML and build your first website:</b></p>
+        <ol>
+            <li><a href="3.html-intro.html">HTML Basics</a></li>
+            <li><a href="4.list&tabels.html">Nested Lists & Tables</a></li>
+            <li><a href="5.filepath.html">File Paths & Boilerplate</a></li>
+            <li><a href="6.forms.html">HTML Forms From Beginner to Advance</a></li>
+            <li><a href="7.mediatag.html">HTML Media & Multipage Websites</a></li>
+        </ol>
+        <h2>Video Lecture</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GkZN_-HMCJ8" allowfullscreen></iframe>
+        <h2>Lecture note:</h2>
+        <p><b>Below the lecture note of this video for quick revision:</b></p>
+        <nav>
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#intro">Introduction to HTML</a></li>
+                <li><a href="#headings">Headings</a></li>
+                <li><a href="#paragraphs">Paragraphs</a></li>
+                <li><a href="#hr">Horizontal Rules</a></li>
+                <li><a href="#line-breaks">Line Breaks</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#images">Images</a></li>
+            </ul>
+        </nav>
+
+        <section id="intro">
+            <h2>Introduction to HTML</h2>
+            <p>HTML stands for <strong>HyperText Markup Language</strong>. It is the standard language used to create and structure the content of a webpage.</p>
+            
+            <article>
+                <h3>HyperText</h3>
+                <p>This refers to the ability to create links that connect web pages to one another, making the web a connected "web" of information.</p>
+            </article>
+            
+            <article>
+                <h3>Markup Language</h3>
+                <p>This means you use "tags" to surround your content, giving that content meaning and structure. You are "marking up" a plain text document.</p>
+            </article>
+            
+            <article>
+                <h3>First Website</h3>
+                <p>The first website ever created is still available at: <a href="https://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">https://info.cern.ch/hypertext/WWW/TheProject.html</a></p>
+            </article>
+        </section>
+
+        <section id="headings">
+            <h2>1. Headings: &lt;h1&gt; to &lt;h6&gt;</h2>
+            <p>Headings are tags used to define titles and subtitles on your page. They are crucial for creating a logical hierarchy and outline for your content.</p>
+            
+            <h3>Heading Hierarchy:</h3>
+            <ul>
+                <li><code>&lt;h1&gt;</code>: The most important heading, typically used only once per page for the main title.</li>
+                <li><code>&lt;h2&gt;</code>: A major section heading.</li>
+                <li><code>&lt;h3&gt;</code>: A sub-section heading under an <code>&lt;h2&gt;</code>.</li>
+                <li>...and so on, down to <code>&lt;h6&gt;</code>, the least important heading.</li>
+            </ul>
+            
+            <h3>Purpose:</h3>
+            <p>To structure your document in a way that is understandable to both humans and machines (like search engines and screen readers). It is <strong>not</strong> just for making text big; it is for giving the text structural importance.</p>
+            
+            <h3>Example:</h3>
+            <pre>
+&lt;h1&gt;Main Title of the Page&lt;/h1&gt;
+&lt;h2&gt;Section Heading&lt;/h2&gt;
+&lt;h3&gt;Sub-section Heading&lt;/h3&gt;
+            </pre>
+        </section>
+
+        <section id="paragraphs">
+            <h2>2. Paragraphs: &lt;p&gt;</h2>
+            <p>The paragraph tag is the most common tag you'll use. It's for grouping sentences and blocks of text together.</p>
+            
+            <h3>Purpose:</h3>
+            <p>To define a distinct paragraph of text. Browsers automatically add a little bit of space before and after a <code>&lt;p&gt;</code> element, separating it from other content. You should not use multiple line breaks; you should use multiple <code>&lt;p&gt;</code> tags.</p>
+            
+            <h3>Example:</h3>
+            <pre>
+&lt;p&gt;This is the first paragraph. It contains several sentences about a topic.&lt;/p&gt;
+&lt;p&gt;This is a second, separate paragraph. The browser will display it with a space between it and the first one.&lt;/p&gt;
+            </pre>
+        </section>
+
+        <section id="hr">
+            <h2>3. Horizontal Rules: &lt;hr&gt;</h2>
+            <p>The <code>&lt;hr&gt;</code> tag defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.</p>
+            
+            <h3>Purpose:</h3>
+            <p>The <code>&lt;hr&gt;</code> element is used to separate content (or define a change) in an HTML page.</p>
+            
+            <h3>Example:</h3>
+            <pre>
+&lt;p&gt;This is the first topic.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;This is a completely different topic.&lt;/p&gt;
+            </pre>
+        </section>
+
+        <section id="line-breaks">
+            <h2>4. Line Breaks: &lt;br&gt;</h2>
+            <p>This tag tells the browser, "Stop writing on this line and immediately start on the next one." It's like hitting the Enter key once in a poem or an address.</p>
+            
+            <h3>Purpose:</h3>
+            <p>Creates a single line break.</p>
+            
+            <h3>Example:</h3>
+            <pre>
+&lt;p&gt;221B Baker Street&lt;br&gt;
+London, England&lt;/p&gt;
+            </pre>
+        </section>
+
+        <section id="lists">
+            <h2>5. Lists: &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</h2>
+            <p>These tags are used to create lists. This is a perfect example of nesting.</p>
+            
+            <h3>List Types:</h3>
+            <ul>
+                <li><code>&lt;ul&gt;</code>: An <strong>U</strong>nordered <strong>L</strong>ist. It creates a bulleted list.</li>
+                <li><code>&lt;ol&gt;</code>: An <strong>O</strong>rdered <strong>L</strong>ist. It creates a numbered list.</li>
+                <li><code>&lt;li&gt;</code>: A <strong>L</strong>ist <strong>I</strong>tem. Each item in either type of list must be wrapped in an <code>&lt;li&gt;</code> tag.</li>
+            </ul>
+            
+            <h3>Purpose:</h3>
+            <p>To group related items together in a list format.</p>
+            
+            <h3>Example (Nesting in action):</h3>
+            <pre>
+&lt;ul&gt;
+  &lt;li&gt;Tea Bag&lt;/li&gt;
+  &lt;li&gt;Water&lt;/li&gt;
+  &lt;li&gt;Sugar&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First, boil the water in a kettle.&lt;/li&gt;
+  &lt;li&gt;Add tea bag, sugar and milk into it&lt;/li&gt;
+  &lt;li&gt;Keep boiling it for 5 minutes &lt;/li&gt;
+  &lt;li&gt;Serve the tea by pouring it into cup&lt;/li&gt;
+&lt;/ol&gt;
+            </pre>
+        </section>
+
+        <section id="links">
+            <h2>6. Links: &lt;a&gt;</h2>
+            <p>The Anchor tag is what makes the web "hypertext." It is used to create a hyperlink to another webpage, a file, or a location within the same page.</p>
+            
+            <h3>Purpose:</h3>
+            <p>To make text (or an image) clickable, allowing users to navigate. It requires an attribute called <code>href</code> (hypertext reference) to specify the destination URL.</p>
+            
+            <h3>Example:</h3>
+            <pre>
+&lt;a href="https://www.coderarmy.in/"&gt;Visit Coder Army&lt;/a&gt;
+            </pre>
+            
+            <h3>The target Attribute:</h3>
+            <p>By default, the linked page will be displayed in the current browser window. To change this, you must specify another target for the link.</p>
+            
+            <h4>Target Values:</h4>
+            <ul>
+                <li><code>_self</code> - Default. Opens the document in the same window/tab as it was clicked</li>
+                <li><code>_blank</code> - Opens the document in a new window or tab</li>
+            </ul>
+            
+            <h3>Example with target:</h3>
+            <pre>
+&lt;a href="https://www.coderarmy.in/" target="_blank"&gt;Visit Coder Army (opens in new tab)&lt;/a&gt;
+            </pre>
+        </section>
+
+        <section id="images">
+            <h2>7. Images: &lt;img&gt;</h2>
+            <p>The Image tag is a <strong>self-closing tag</strong> used to embed an image onto your page.</p>
+            
+            <h3>Purpose:</h3>
+            <p>To display a visual image. It requires two main attributes:</p>
+            <ul>
+                <li><code>src</code> (source): The path or URL to the image file. This is mandatory.</li>
+                <li><code>alt</code> (alternative text): A description of the image. This is vital for accessibility (screen readers for the visually impaired will read this out) and for when the image fails to load.</li>
+            </ul>
+            
+            <h3>Example:</h3>
+            <pre>
+&lt;img src="https://cdn.britannica.com/16/234216-050-C66F8665/beagle-hound-dog.jpg" 
+     height="300px" 
+     width="300px" 
+     alt="A beautiful Beagle dog"&gt;
+            </pre>
+            
+            <h3>Optional Attributes:</h3>
+            <ul>
+                <li><code>height</code>: Sets the height of the image (in pixels or percentage)</li>
+                <li><code>width</code>: Sets the width of the image (in pixels or percentage)</li>
+            </ul>
+        </section>
+
+
+        <h3>A simple example by using all these attributes:</h3>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Basics&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+    &lt;p&gt;Welcome to my page!&lt;/p&gt;
+    &lt;hr&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Item 1&lt;/li&gt;
+        &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;a href="https://www.coderarmy.in" target="_blank"&gt;Visit CoderArmy&lt;/a&gt;
+    &lt;br&gt;
+    &lt;img src="https://www.pngfind.com/pngs/m/597-5976720_html5-logo-lenguaje-de-programacion-html5-hd-png.png" alt="Logo" width="100"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+
+        <h3>Output</h3>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>HTML Basics</title>
+        </head>
+        <body>
+            <h1>My Website</h1>
+            <p>Welcome to my page!</p>
+            <hr>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+            <a href="https://www.coderarmy.in" target="_blank">Visit CoderArmy</a>
+            <br>
+            <img src="https://www.pngfind.com/pngs/m/597-5976720_html5-logo-lenguaje-de-programacion-html5-hd-png.png" alt="Logo" width="100">
+        </body>
+        </html>
+        <br><br>
+        <h3>Next lesson: Nested Lists & Tables</a>.So, <a href="4.list&tabels.html">let's go</a>!🚀</h3>
+    </main>
+    <hr>
+    <footer align="center">
+        <p>Copyright &copy; 2025 by Tanmoy Chowdhury | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
